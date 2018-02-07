@@ -36,23 +36,23 @@ public:
 
 	//Input variables
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Parameters")
-		float Acceleration = 760;
+		float Acceleration = 1500;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Parameters")
-		float MaxTurnDegre = 30;
+		float MaxTurnDegre = 20;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Parameters")
 		float AxelDistance=370;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Parameters")
-		float DragConst = 0.4257;
+		float DragConst = 0.2;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Parameters")
-		float RollingR = 12.8;
+		float RollingR = 12;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Parameters")
-		float BreakingConstat=1000;
+		float BreakingConstat=800;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Parameters")
-		float AntiSlide=1200;
+		float AntiSlide=3500;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Parameters")
-		float MaxRightMCOffset;
+		float MaxRightMCOffset=40;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Parameters")
-		float MaxForwardMCOffset;
+		float MaxForwardMCOffset=40;
 
 
 	//Helping variables

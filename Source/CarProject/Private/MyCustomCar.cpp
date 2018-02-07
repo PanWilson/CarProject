@@ -54,9 +54,9 @@ void AMyCustomCar::SetupPlayerInputComponent(UInputComponent* PlayerInputCompone
 void AMyCustomCar::MoveForward(float AxisValue)
 {
 		FVector Engine;
-		if (!BackAxelTouching) Engine = FVector(0, 0, 0);
+		if (!BackAxelTouching || (PVelocity.Size()<10 && InputComponent->GetAxisValue("Breaking"))) Engine = FVector(0, 0, 0);
 		else if ((AxisValue < 0 && FVector::DotProduct(CarBody->GetForwardVector(), PVelocity.GetSafeNormal()) > 0) || InputComponent->GetAxisValue("Breaking")) {
-			Engine = CarBody->GetForwardVector() * -1 * BreakingConstat * CarBody->GetMass();
+			Engine = CarBody->GetForwardVector() * BreakingConstat * CarBody->GetMass() * -1 * copysign(1, FVector::DotProduct(CarBody->GetForwardVector(), PVelocity.GetSafeNormal()));
 		}
 		else Engine = CarBody->GetForwardVector() * CarBody->GetMass() * Acceleration * AxisValue;
 
